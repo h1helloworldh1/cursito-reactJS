@@ -4,8 +4,6 @@ import NavBar from './components/NavBar';
 
 function App() {
   const pageInfo = {logo:"logo1.png", title:"Welcome to devbooks.", description:"books for programmers and developers."};
-  const topics = ['Books', 'eBooks','Bestseller','New Arrivals']
-  
   return (
     <div>
       <NavBar />
@@ -23,9 +21,7 @@ function App() {
       </div>
       {/* items list */}
       <ul>
-      {topics.map(items => (
-    <ItemListContainer value={items} />
-        ))}
+        <ItemListContainer />
       </ul>
     </div>
   );
