@@ -1,4 +1,5 @@
 import './App.css';
+import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 
@@ -20,9 +21,8 @@ function App() {
         </div>
       </div>
       {/* items list */}
-      <ul>
         <ItemListContainer />
-      </ul>
+        <ItemDetailContainer />
     </div>
   );
 }

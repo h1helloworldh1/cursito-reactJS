@@ -5,7 +5,7 @@ const ItemList = ({items}) => {
     return(
         <div className="row">
             {items.map(item => 
-                <div key={item.id}><Item id={item.id} title={item.title} editorial={item.editorial} price={item.price} />
+                <div className="col-md-4 mb-2" key={item.id}><Item id={item.id} title={item.title} editorial={item.editorial} price={item.price} />
             </div>)}
         </div>
     )
