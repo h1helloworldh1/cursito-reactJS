@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { navBarOptions } from "../helpers/strings";
 import CartWidget from "./CartWidget";
 
@@ -6,11 +7,11 @@ const NavBar = () =>{
     return(
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#top">dev<b>books</b></a>
+                <Link className="navbar-brand" to={"/"} >dev<b>books</b></Link>
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
     {navBarOptions.map(navBarOption =>    
                         <li  key={navBarOption.id} className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#top">{navBarOption.category}</a>
+                            <Link className="nav-link active" aria-current="page" to={'/books/' + navBarOption.category}>{navBarOption.category}</Link>
                         </li>)}
                 </ul>
             </div>

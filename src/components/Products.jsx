@@ -1,26 +1,56 @@
 export const products = [
     {title: "Programming Python",
     editorial:"O'reilly",
+    description:"Get a comprehensive, in-depth introduction to the core Python language with this hands-on book. Based on author Mark Lutz’s popular training course, this updated fifth edition will help you quickly write efficient, high-quality code with Python. It’s an ideal way to begin, whether you’re new to programming or a professional developer versed in other languages.",
     price: 44,
+    category:'bestseller',
+    photo: "/img/python.jpg",
     id:1},
 
     {title: "JavaScript - The Definitive Guide",
     editorial:"O'reilly",
     price: 53,
+    category:'bestseller',
+    photo: "/img/javascript.jpg",
     id:2},
 
     {title: "HTML5 - Pocket Reference",
     editorial:"O'reilly",
     price: 14, 
+    photo: "/img/html5-pocket.jpg",
+    category:'ebook for 0,99 USD', 
     id:3},
 
     {title: "Learning React", 
     editorial:"O'reilly", 
     price: 34, 
+    photo: "/img/reactjs.jpg",
+    category:'ebook for 0,99 USD', 
     id:4},
 
     {title: "CSS - The Definitve Guide",
     editorial:"O'reilly",
     price: 51,
+    category:'bestseller',
+    photo: "/img/css.jpg",
     id:5},
+    
+    {title: "SQL Cookbook",
+    editorial:"O'reilly",
+    price: 44,
+    photo: "/img/sql.jpg",
+    category:'ebook for 0,99 USD',
+    id:6},
+
+    {title: "LINUX Systems",
+    editorial:"O'reilly",
+    price: 34,
+    photo: "/img/linux.jpg",
+    id:7},
+
+    {title: "Mozilla",
+    editorial:"O'reilly",
+    price: 23,
+    photo: "/img/mozilla.jpg",
+    id:8}
 ];

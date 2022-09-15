@@ -2,27 +2,21 @@ import './App.css';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const pageInfo = {logo:"logo1.png", title:"Welcome to devbooks.", description:"books for programmers and developers."};
+  // const pageInfo = {logo:"logo1.png", title:"Welcome to devbooks.", description:"books for programmers and developers."};
   return (
     <div>
-      <NavBar />
-      {/* welcome-container */}
-      <div className='container'>
-        <div className='row align-items-center'>
-          <div className='col-sm-6'>
-            <img src={pageInfo.logo} alt={pageInfo.title} className="img-fluid"/>
-          </div>
-          <div className='col-sm-6'>
-              <h1>{pageInfo.title}</h1>
-              <p>{pageInfo.description}</p>
-          </div>
-        </div>
-      </div>
-      {/* items list */}
-        <ItemListContainer />
-        <ItemDetailContainer />
+      
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route exact path='/' element={<ItemListContainer />} />
+          <Route exact path='/books/:cat' element={<ItemListContainer />} />
+          <Route exact path='/book/:ids' element={<ItemDetailContainer />} />
+        </Routes>
+      </BrowserRouter>      
     </div>
   );
 }

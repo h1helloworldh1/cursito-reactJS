@@ -3,26 +3,38 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { products } from './Products'
 import ItemDetail from './ItemDetail'
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({})
+    let {ids} = useParams()
 
     useEffect(()=>{
-        const getProduct =() =>
+        let books=""
+        if(ids === products.id){
+            books = products.id
+        }else{
+            books = 'books'
+        }
+        const getProduct = 
             new Promise ((res, rej)=>{
-                const product = products.find((prod)=> prod.id === 1)
                 setTimeout(()=>{
-                    res(product)
+                    res(products)
                 },500)
             })
-            getProduct()
+            getProduct
             .then((info)=>{
-                setItem(info)
+                if(books === 'books'){
+                    setItem(info)
+                }else{
+                    const product = info.filter(prod => prod.id === books)
+                    setItem(product)
+                }
             })
             .catch((error)=>{
                 console.log(error)
             })
-    }, [])
+    }, [ids])
     return(
         <ItemDetail item={item}/>
     )
