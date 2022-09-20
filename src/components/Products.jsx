@@ -11,6 +11,7 @@ export const products = [
     editorial:"O'reilly",
     price: 53,
     category:'bestseller',
+    description: "lorem...",
     photo: "/img/javascript.jpg",
     id:2},
 

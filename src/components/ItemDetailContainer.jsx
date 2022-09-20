@@ -7,33 +7,18 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({})
-    let {ids} = useParams()
+    const {ids} = useParams()
 
     useEffect(()=>{
-        let books=""
-        if(ids === products.id){
-            books = products.id
-        }else{
-            books = 'books'
-        }
         const getProduct = 
-            new Promise ((res, rej)=>{
-                setTimeout(()=>{
+            new Promise (res => {
                     res(products)
-                },500)
             })
             getProduct
-            .then((info)=>{
-                if(books === 'books'){
-                    setItem(info)
-                }else{
-                    const product = info.filter(prod => prod.id === books)
-                    setItem(product)
-                }
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
+            .then(resp => setItem(resp.find(product => product.id === parseInt(ids))))
+            // .catch((error)=>{
+            //     console.log(error)
+            // })
     }, [ids])
     return(
         <ItemDetail item={item}/>
