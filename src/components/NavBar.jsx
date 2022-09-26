@@ -14,8 +14,9 @@ const NavBar = () =>{
                             <Link className="nav-link active" aria-current="page" to={'/books/' + navBarOption.category}>{navBarOption.category}</Link>
                         </li>)}
                 </ul>
+                <CartWidget />
             </div>
-            <CartWidget />
+            
         </nav>
     );
 }

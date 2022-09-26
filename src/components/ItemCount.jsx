@@ -1,11 +1,9 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-import {CartContext} from "./CartContext";
 
-const ItemCount = ({initial, stock, item}) => {
-    // const {prop} = prop;
-    const {cart, setCart, addItem} = useContext(CartContext);
+const ItemCount = ({initial, stock, onAdd}) => {
+    // // const {prop} = prop;
+    // const {cart, setCart, addItem} = useContext(CartContext);
     const [counter, setCounter] = useState(initial);
     const [itemStock, setItemStock] = useState(stock);
 
@@ -23,10 +21,14 @@ const ItemCount = ({initial, stock, item}) => {
     }
     const addProducts = () =>{
         if(counter <= itemStock){
-            addItem(item, counter);
+            onAdd(counter);
             setItemStock(itemStock - counter);
+            setCounter(itemStock - counter)
         }
     }
+    useEffect(()=>{
+        setItemStock(stock);
+    },[stock])
     return(
         <div>
             <label htmlFor="button">Quantity: {counter} in Stock: {stock}</label>

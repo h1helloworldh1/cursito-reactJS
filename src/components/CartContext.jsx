@@ -28,8 +28,15 @@ const Provider = ({children}) => {
     const cartTotal = () => {
         return cart.reduce((total, item) => total += item.quantity, 0);
     }
+    const priceTotal = () => {
+        return cart.reduce((total, item) => total += item.price, 0);
+    }
+    const deleteOne = (id) => {
+        const itemsFill = cart.filter((prod)=> prod.id !== id);
+        setCart(itemsFill);
+    };
     return(
-        <CartContext.Provider value={{addItem, clear, isInCart, cartTotal}}>
+        <CartContext.Provider value={{cart, addItem, clear, isInCart, cartTotal, deleteOne, priceTotal}}>
             {children}
         </CartContext.Provider>
     )

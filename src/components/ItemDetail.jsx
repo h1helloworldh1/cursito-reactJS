@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import ItemCount from './ItemCount'
 
@@ -10,7 +11,7 @@ const ItemDetail = ({item}) =>{
     const [counter, setCounter] = useState(0);
     
 
-    const onAdd = (item, counter) =>{
+    const onAdd = (counter) =>{
         setCounter(counter);
         addItem(item, counter);
     }
@@ -26,8 +27,9 @@ const ItemDetail = ({item}) =>{
                     <span style={{color:'orange'}}>{item.category}</span><br></br>
                     <span>{item.editorial}</span>
                     <p>{item.description}</p>
-                    <h5><b>${item.price}</b></h5>
-                    <ItemCount stock={5} initial={1} onAdd={onAdd} counter={counter} setCounter={setCounter} item={item}/>
+                    <h5>US$<b>{item.price}</b></h5><br/>
+                    {counter === 0 ? <ItemCount stock={5} initial={1} onAdd={onAdd} counter={counter} setCounter={setCounter} item={item}/> :
+                    <Link to={"/cart"} className="btn btn-primary">Go to Cart</Link>}
                 </div>
             </div>
         </div>
