@@ -29,7 +29,7 @@ const Provider = ({children}) => {
         return cart.reduce((total, item) => total += item.quantity, 0);
     }
     const priceTotal = () => {
-        return cart.reduce((total, item) => total += item.price, 0);
+        return cart.reduce((total, item) => total += item.price * item.quantity, 0);
     }
     const deleteOne = (id) => {
         const itemsFill = cart.filter((prod)=> prod.id !== id);

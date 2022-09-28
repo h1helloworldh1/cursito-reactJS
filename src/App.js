@@ -7,7 +7,7 @@ import Provider from './components/CartContext';
 import Cart from './components/Cart';
 
 function App() {
-  // const pageInfo = {logo:"logo1.png", title:"Welcome to devbooks.", description:"books for programmers and developers."};
+  
   return (
     <div>
       <Provider>

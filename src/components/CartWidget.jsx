@@ -4,16 +4,16 @@ import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom"
 
 const CartWidget = () =>{
-    const {cartTotal, clear, cart} = useContext(CartContext);
+    const {cartTotal, cart} = useContext(CartContext);
     const cartIcon = {icon:"shopping-cart.png"}
-    const binIcon = {icon:"bin.png"}
+    // const binIcon = {icon:"bin.png"}
     return(
         <div className="row">
-            <button type="button" className="btn col" title="clear cart" onClick={
+            {/* <button type="button" className="btn col" title="clear cart" onClick={
                 ()=> {clear()}
             }>
                 <img style={{width: '23px'}} src={binIcon.icon} alt="bin" />
-            </button>
+            </button> */}
             <Link to={"/cart"} className='col'>
                 <button type="button" className="btn position-relative" title="See cart">
                     <img src={cartIcon.icon} alt="cart" />
