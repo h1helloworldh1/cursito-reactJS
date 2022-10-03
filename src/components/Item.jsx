@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Item = ({title, price, id, img}) => {
     return(
         <div key={id}>
-            <div className="card" style={{width: '14rem', height:'420px'}}>
+            <div className="card" style={{width: '240px', height:'420px'}}>
                 <Link to={'/book/' + id}><img  className="card-img-top p-3" src={img} alt={img} /></Link>
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>

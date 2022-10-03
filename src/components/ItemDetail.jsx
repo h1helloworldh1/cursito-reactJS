@@ -29,7 +29,9 @@ const ItemDetail = ({item}) =>{
                     <p>{item.description}</p>
                     <h5>US$<b>{item.price}</b></h5><br/>
                     {counter === 0 ? <ItemCount stock={5} initial={1} onAdd={onAdd} counter={counter} setCounter={setCounter} item={item}/> :
-                    <Link to={"/cart"} className="btn btn-primary">Go to Cart</Link>}
+                    <Link to={"/cart"} className="btn btn-primary">Go to Cart</Link>
+                    }
+                    {counter === 0 ? '': <Link to={"/"} className="btn btn-primary m-1">Continue buying</Link>}
                 </div>
             </div>
         </div>

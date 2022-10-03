@@ -16,7 +16,6 @@ const ItemDetailContainer = () => {
         getDoc(response).then((data)=>{
             if(data.exists()){
                 setItem({id:data.id, ...data.data()});
-                console.log(data.data())
             }
         })
 

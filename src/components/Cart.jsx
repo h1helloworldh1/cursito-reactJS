@@ -13,7 +13,7 @@ return(
                 <span className="col-2 text-center">{items.title}</span><br/>
                 <span className="col-2">USD <b>{items.price}</b></span><br/>
                 <span className="col-2">Quantity: <b>{items.quantity}</b></span>
-                <button onClick={() => deleteOne(items.id)} className="btn btn-primary m-2 col-1">delete</button>
+                <button onClick={() => deleteOne(items.id)} className="btn btn-primary m-2 col-1">Delete</button>
             </div>
 ))}
         <hr/>
@@ -22,7 +22,11 @@ return(
         <hr/>
         {cart < 1 ? <h2 className="m-2">Your cart is empty <Link to="/">Check our Books</Link></h2>
         
-        : <button className="btn btn-primary m-2" onClick={clear}>delete all</button>}
+        : <div>
+            <button className="btn btn-primary m-2" onClick={clear}>Delete all</button>
+            <Link to="/Checkout" className="btn btn-primary m-2">Go to Pay</Link>
+        </div>
+        }
     </div>
 
 )

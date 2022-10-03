@@ -43,14 +43,13 @@ const ItemListContainer = () =>{
         //     }
     const pageInfo = {logo:"logo1.png", title:"Welcome to devbooks.", description:"books for programmers and developers."};
     return(
-        <div className="container-fluid">
-            <div className="row">
-            <div className="col m-2 text-center">
-                    <h1><b>{pageInfo.title}</b></h1><br/>
-                    <p>{pageInfo.description}</p>
+        <div className="container-fluid" >
+            <div className="row align-items-center" style={{backgroundImage: `url('background.jpg')`, backgroundPosition:'center', backgroundSize:'cover'}}>
+                <div className="col m-2 text-center text-light" style={{textShadow:"2px 2px #000"}} >
+                    <h1 className="m-3" style={{fontSize:'60px'}}><b>{pageInfo.title}</b></h1><br/>
+                    <p style={{fontSize:'28px'}}><b>{pageInfo.description}</b></p>
                 </div>
-                <img src={pageInfo.logo} alt={pageInfo.title} className="img-fluid col-6 m-2"/>
-                
+                    <img src={pageInfo.logo} alt={pageInfo.title} className="img-fluid col-6 m-2"/>
             </div>
             <ItemList items={items}/>
         </div>
